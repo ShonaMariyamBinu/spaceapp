@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webb Telescope</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #090202;
+            color: #333;
+        }
+
+        header {
+            background-color: #282c34;
+            padding: 1rem;
+            text-align: center;
+            color: white;
+        }
+
+        header nav {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        section {
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        /* Adding background GIF to the home page */
+        #home-page {
+            background: url("Media/gif1.gif") no-repeat center center/cover;
+            color: rgb(255, 245, 245);
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Adding a semi-transparent overlay over the GIF */
+        #home-page::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        #home-page h1 {
+            font-size: 4rem; /* Increased size for main heading */
+            margin-bottom: 0.3rem; /* Reduced margin for subheading */
+            font-family: 'Playfair Display', serif; /* Aesthetic font for main heading */
+            animation: fadeIn 2s ease-in-out; /* Animation */
+        }
+
+        #home-page h2 {
+            font-size: 1.8rem; /* Slightly larger subheading size */
+            color: #c6d874ce; /* Different color for emphasis */
+            margin-top: 0.5rem; /* Reduced space above subheading */
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+       
+        /* New section for JWST description */
+        .description-section {
+            padding: 2rem;
+            background-color: rgba(0, 0, 0, 0.1); /* Light background for emphasis */
+            border-radius: 8px;
+            color: #ddd;
+        }
+
+        .description-section h3 {
+            font-size: 2.5rem; /* Heading size */
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin-bottom: 1rem; /* Space below heading */
+            color: #082fa3; /* Color for heading */
+            text-shadow: #cbd1e3;
+        }
+
+        .description-section p {
+            font-size: 1.2rem; /* Paragraph size */
+            line-height: 1.8; /* Spacing for readability */
+        }
+        .floating-text {
+            position: relative;
+            white-space: nowrap; /* Prevent line breaks */
+            font-size: 1.5rem; /* Size of the floating text */
+            color: #61abe0f4; /* Color for floating text */
+            animation: floatText 10s linear infinite; /* Animation duration and repetition */
+        }
+
+        @keyframes floatText {
+            0% {
+                transform: translateX(-100%); /* Start off screen on the left */
+            }
+            100% {
+                transform: translateX(100%); /* Move to off screen on the right */
+            }
+        }
+
+        /* New section for image */ 
+        .image-section {
+            margin: 2rem 0; /* Margin for spacing */
+            display: flex; /* Enable flexbox */
+            justify-content: center; /* Center image horizontally */
+            align-items: center; /* Center image vertically */
+        }
+
+        .image-section img {
+            max-width: 100%; /* Responsive image */
+            height: auto;
+            border-radius: 8px; /* Rounded corners for the image */
+        }
+
+        /* New section for video */
+        .video-section {
+            margin-top: 2rem; /* Adjusted margin for separation */
+            text-align: center;
+        }
+
+        .video-section video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .video-section p {
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            color: #ddd;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #02060f;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        footer p {
+            margin-top: 0.5rem;
+        }
+
+        /* Styling the "What is it for?" section */
+        #main-content h2 {
+            font-size: 3rem; /* Increase the size of "What is it for?" */
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            margin-bottom: 1.5rem; /* Add more space below */
+            color: #a7a0a4f4; /* Optional: Color for emphasis */
+        }
+
+        #main-content h3 {
+            font-size: 2rem; /* Increase the size of the links */
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+            margin-bottom: 1rem; /* Space below each heading */
+            color: #fffefe; /* Optional: Color for text */
+        }
+
+        #main-content h3 a {
+            color: inherit; /* Make sure the link color matches the text color */
+            text-decoration: none;
+            display: block; /* Ensure each link is on a new line */
+        }
+
+        /* Animated Section for "What is it for?" */
+        .animated-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem; /* Add spacing between sections */
+            animation: fadeInSection 2s ease-in-out; /* Animation for the entire section */
+        }
+
+        .circle-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%; /* Make the image circular */
+            overflow: hidden; /* Ensure the image stays within the circle */
+            margin: 0 1rem; /* Space between the image and text */
+        }
+
+        .circle-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure the image fits within the circle */
+        }
+
+        .animated-text h3 {
+            font-size: 2rem; /* Adjust font size */
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: #ff9000;
+            animation: bounceIn 1.5s ease-in-out; /* Text bounce animation */
+        }
+
+        .animated-text h3 a {
+            text-decoration: none;
+            color: inherit; /* Link should inherit the color */
+        }
+
+        @keyframes fadeInSection {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            60% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* New styles for "How Was it Made?" section */
+        .made-section {
+            padding: 2rem;
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            color: #ddd;
+            margin-top: 2rem; /* Added margin for spacing */
+        }
+
+        .made-section h3 {
+            font-size: 2rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #ff9000; /* Color for heading */
+            margin-bottom: 1rem;
+        }
+
+        .made-section h4 {
+            font-size: 1.5rem; /* Subheading size */
+            color: #ff0095f4; /* Optional: Color for emphasis */
+            margin-top: 1.5rem; /* Space above subheading */
+        }
+
+        .made-section p {
+            font-size: 1.2rem; /* Paragraph size */
+            line-height: 1.8; /* Spacing for readability */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            #home-page h1 {
+                font-size: 3rem; /* Adjusted size for mobile */
+            }
+
+            #home-page h2 {
+                font-size: 1.5rem; /* Smaller subheading on mobile */
+            }
+
+            #banner a {
+                font-size: 0.9rem;
+                padding: 0.8rem 1.6rem;
+            }
+
+            .description-section h3 {
+                font-size: 2rem; /* Responsive size for mobile */
+            }
+
+            .description-section p {
+                font-size: 1rem; /* Responsive size for mobile */
+            }
+
+            .video-section p {
+                font-size: 1rem;
+            }
+
+            .made-section h3 {
+                font-size: 2rem; /* Responsive size for mobile */
+            }
+
+            .made-section h4 {
+                font-size: 1.5rem; /* Responsive size for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <main>
+        <section id="home-page">
+            <h1>Symphony Of the Stars:</h1>
+            <h2>Harmonizing the James Webb Space Telescope in Music and Images</h2>
+            <div id="banner">
+                <a href="#main-content">Details</a>
+            </div>
+        </section>
+
+        <!-- New section for JWST description -->
+        <section class="description-section">
+            <div class="floating-text">What is James Webb Space Telescope? Know more about its scientific purpose and how it is made!</div>
+            <h3>What is James Webb Space Telescope?</h3>
+            <p>
+                The JWST is a large, space-based observatory optimized for infrared wavelengths, allowing it to peer through clouds of gas and dust and see further back in time than ever before. The telescope is designed to provide unprecedented images and data on the universe's earliest moments, star formation, and galaxy evolution.
+            </p>
+            <p>
+                <strong>Size and Design:</strong><br>
+                It features a large primary mirror that is 6.5 meters (about 21 feet) in diameter, much larger than Hubble’s 2.4-meter mirror. This large mirror allows it to collect more light and see fainter objects. The mirror is made up of 18 hexagonal segments that work together to focus light.
+            </p>
+        </section>
+
+        <!-- New section for images -->
+        <section class="image-section">
+            <img src="Media/JWST details.jpg" alt="James Webb Space Telescope Image">
+        </section>
+
+      
+
+        <!-- Main content section with animated images -->
+        <section id="main-content">
+            <h2>JWST: What is it for?</h2>
+
+            <div class="animated-section">
+                <div class="circle-image">
+                       <img src="Media/circle1.png" alt="Early Universe">
+                   </div>
+        
+                <div class="animated-text">
+                    <h3><a href="files/early-universe.html">Study of Universe</a></h3>
+                </div>
+                <div class="circle-image">
+                    <img src="Media/circle2.jpg" alt="Star Formation">
+                </div>
+            </div>
+
+            <div class="animated-section">
+                <div class="circle-image">
+                    <img src="Media/circle3.png" alt="Galaxy">
+                </div>
+                <div class="animated-text">
+                    <h3><a href="files/star-formation.html">Understanding Star Formation</a></h3>
+                </div>
+                <div class="circle-image">
+                    <img src="Media/circle5.png" alt="Nebula">
+                </div>
+            </div>
+
+        </section>
+          <!-- New section for videos -->
+        <!-- New section for GIF -->
+<section class="gif-container">
+    <img src="Media/tmain gif.gif" alt="Star Formation GIF" class="gif-container">
+    <p>Watch the James Webb Space Telescope</p>
+</section>
+
+
+        <!-- New section for "How Was it Made?" -->
+        <section class="made-section">
+            <h3>JWST: How Was it Made?</h3>
+            <h4>Development Timeline:</h4>
+            <p>
+                The project started in the late 1990s, with the aim to create a successor to the Hubble Space Telescope. The development took over two decades and involved numerous challenges, including technical hurdles and budget issues.
+            </p>
+            <h4>Launch:</h4>
+            <p>
+                JWST was launched on December 25, 2021, aboard an Ariane 5 rocket from French Guiana. After launch, it traveled about 1.5 million kilometers (about 930,000 miles) from Earth to its operating location at the second Lagrange point (L2), where it can maintain a stable position.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Symphony Of the Stars: Exploring the Universe through Music and Images</p>
+        <p>&copy; 2024, Your Website</p>
+    </footer>
+
+</body>
+</html>
