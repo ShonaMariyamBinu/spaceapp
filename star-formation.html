@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Formation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000005; /* Dark space-like background */
+            font-family: 'Poppins', sans-serif;
+            color: #e0e0e0; /* Soft white text */
+        }
+
+        /* Star Formation Heading */
+        h1 {
+            text-align: center;
+            font-size: 3.5em;
+            margin-top: 50px;
+            font-weight: 600;
+            background: linear-gradient(90deg, #f39c12, #f1c40f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.7);
+            transition: all 0.3s ease-in-out;
+        }
+
+        h1:hover {
+            transform: scale(1.05);
+            text-shadow: 3px 6px 10px rgba(0, 0, 0, 0.9);
+        }
+
+        /* Description Text */
+        p {
+            font-size: 1.3em;
+            text-align: center;
+            line-height: 1.8;
+            margin: 30px auto;
+            width: 80%;
+            max-width: 800px;
+            color: #dcdcdc;
+        }
+
+        /* Container for GIF and Buttons */
+        .container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* GIF Styling */
+        .gif-container {
+            max-width: 100%;
+            display: block;
+            margin: 0 auto;
+            padding-bottom: 20px;
+        }
+
+        /* Play Video Button */
+        .btn {
+            background-color: #f39c12;
+            color: #121212;
+            font-size: 1.2em;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #f1c40f;
+            box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Fun Facts Link Styling */
+        .link {
+            font-size: 1.3em;
+            text-align: center;
+            margin-top: 20px;
+            display: block;
+            color: #e0b722;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .link:hover {
+            color: #f39c12;
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #888;
+            font-size: 0.9em;
+            background-color: #1f1f2e;
+            margin-top: 50px;
+        }
+
+        /* Adding a smooth scroll effect */
+        html {
+            scroll-behavior: smooth;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Star Formation Heading -->
+    <h1>Star Formation</h1>
+
+    <!-- GIF for Star Formation -->
+    <div class="container">
+        <img src="Media/g main gif.gif" alt="Star Formation GIF" class="gif-container">
+    </div>
+
+    <!-- Description of Star Formation -->
+    <p>
+        Stars are born in extremely cold environments called molecular clouds. These clouds are filled with gas and dust and are as cold as 10 kelvin. Massive stars form quickly, while smaller stars, like our Sun, form more slowly, allowing planets to form in a stable environment. This cosmic process shapes the galaxies around us.
+    </p>
+
+    <!-- Button to Play the Video -->
+    <div class="container">
+        <a href="video.html"><button class="btn">Play the Video</button></a>
+    </div>
+
+    <!-- Link to Fun Facts -->
+    <div class="container">
+        <a href="funfacts.html" class="link">Click here for more fun star facts</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        © 2024 Star Formation Studies. All Rights Reserved.
+    </footer>
+
+</body>
+</html>

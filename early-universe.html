@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stars - James Webb Space Telescope</title>
+    <style>  
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #101010;
+            color: #fff;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #1d1d1d;
+            padding: 60px 20px;
+            text-align: center;
+            background-image: url("Media/headingimg.png"); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        /* Add animation for the heading */
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(-50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        header h1 {
+            color: #c00a0a;
+            font-size: 3.5rem;
+           
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            animation: fadeIn 2s ease-in-out; /* Animation applied */
+        }
+
+        .floating-text {
+            position: relative;
+            white-space: nowrap; /* Prevent line breaks */
+            font-size: 1.5rem; /* Size of the floating text */
+            color: #e70f0ff4; /* Color for floating text */
+            animation: floatText 10s linear infinite; /* Animation duration and repetition */
+        }
+
+        @keyframes floatText {
+            0% {
+                transform: translateX(-100%); /* Start off screen on the left */
+            }
+            100% {
+                transform: translateX(100%); /* Move to off screen on the right */
+            }
+        }
+
+        /* Apply black border around yellowish text */
+        header h2, header p, h2 {
+            text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /* Black border */
+        }
+
+        header h2 {
+            color: #ffcc00;
+            font-size: 2.8rem;
+            margin-top: 10px;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        /* New description below heading */
+        header p {
+            font-size: 1.2rem;
+            color: #e69a0d;
+            margin-top: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeIn 4s ease-in-out;
+        }
+
+        main {
+            margin-top: 2rem;
+        }
+
+        /* New animation for left to right */
+        @keyframes slideInLeft {
+            0% { 
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Apply slide-in-left animation to remaining <h2> elements */
+        h2 {
+            color: #ffcc00;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            animation: slideInLeft 2s ease-in-out;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        a {
+            color: #ffcc00;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Cosmology Section */
+        .cosmology {
+            display: flex;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .cosmology img {
+            width: 900px;
+            height: auto;
+            margin-right: 20px;
+            cursor: pointer; /* Change cursor to pointer */
+        }
+
+        .cosmology p {
+            font-size: 1.2rem;
+            color: #ccc;
+            max-width: 900px;
+            text-align: left;
+        }
+
+        /* Galactic Marvels Section */
+        .galactic-marvels {
+            display: flex;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .galactic-marvels img {
+            width: 900px;
+            height: auto;
+            margin-left: 20px;
+            cursor: pointer; /* Change cursor to pointer */
+        }
+
+        .galactic-marvels p {
+            font-size: 1.2rem;
+            color: #ccc;
+            max-width: 1000px;
+            text-align: left;
+        }
+
+        /* Nebulae Section */
+        .nebulae {
+            display: flex;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .nebulae img {
+            width: 900px;
+            height: auto;
+            margin-right: 20px;
+            cursor: pointer; /* Change cursor to pointer */
+        }
+
+        .nebulae p {
+            font-size: 1.2rem;
+            color: #ccc;
+            max-width: 900px;
+            text-align: left;
+        }
+
+        /* Exoplanet Section */
+        .exoplanets {
+            display: flex;
+            align-items: center;
+            margin-top: 3rem;
+            justify-content: space-between; /* Add space between content */
+        }
+
+        .exoplanets img {
+            width: 900px;
+            height: auto;
+            margin-left: 20px;
+            cursor: pointer; /* Change cursor to pointer */
+            order: 2; /* Move the image to the right */
+        }
+
+        .exoplanets p {
+            font-size: 1.2rem;
+            color: #ccc;
+            max-width: 900px;
+            text-align: left;
+            order: 1; /* Keep the text on the left */
+        }
+
+    </style>
+    <script>
+        // Function to play/pause audio
+        function toggleAudio(audio) {
+            if (audio.paused) {
+                audio.play();
+                console.log("Playing audio:", audio.src);
+            } else {
+                audio.pause();
+                console.log("Pausing audio:", audio.src);
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Exploring the Universe</h1>
+        <h2>A journey through galaxies, nebulae, and beyond with JWST</h2>
+        <p>
+            The James Webb Space Telescope (JWST) provides unparalleled clarity and detail of the universe, capturing the beauty of distant galaxies, nebulae, and exoplanets. With its advanced technology, JWST allows us to peer into the farthest reaches of space, unveiling mysteries about the origins and evolution of the cosmos.
+        </p>
+    </header>
+
+    <main>
+        <div class="floating-text">Click on the image to experience a compelling musical score!</div>
+        <h2>Unveiling the Cosmos: Insights into Cosmology from JWST</h2>
+
+        <!-- Cosmology Section -->
+        <div class="cosmology">
+            <img src="Media/cosmology.png" alt="Galaxy Cluster SMACS 0723" onclick="toggleAudio(document.getElementById('audio-cosmology'));">
+            <audio id="audio-cosmology" src="Media/aud1.mp3"></audio>
+            <p>
+                Thousands of galaxies flood this near-infrared image of galaxy cluster SMACS 0723. High-resolution imaging from NASA’s James Webb Space Telescope combined with a natural effect known as gravitational lensing made this finely detailed image possible.
+            </p>
+        </div>
+
+        <h2 style="margin-top: 3rem;">Galactic Marvels Through JWST</h2>
+        <div class="galactic-marvels">
+            <audio id="audio-galaxy" src="Media/aud2.mp3"></audio>
+            <p>
+                Face-on spiral galaxy, NGC 1566, is split diagonally in this image: The James Webb Space Telescope’s observations appear on the bottom right, and the Hubble Space Telescope’s at the top left. Webb and Hubble’s images show a striking contrast, an inverse of darkness and light.
+            </p>
+            <img src="Media/galaxy.png" alt="NGC 1566 Galaxy" onclick="toggleAudio(document.getElementById('audio-galaxy'));"/>
+        </div>
+
+        <h2 style="margin-top: 3rem;">Nebulae: The Cosmic Paintings of the Universe</h2>
+        <div class="nebulae">
+            <audio id="audio-nebulae" src="Media/Qurbana.mp3"></audio>
+            <img src="Media/nebulae.png" alt="Pillars of Creation" onclick="toggleAudio(document.getElementById('audio-nebulae'));">
+            <p>
+                The Pillars of Creation are set off in a kaleidoscope of color in NASA’s James Webb Space Telescope’s near-infrared-light view. The pillars look like arches and spires rising out of a desert landscape, but are filled with semi-transparent gas and dust, and ever changing. This is a region where young stars are forming – or have barely burst from their dusty cocoons as they continue to form.
+            </p>
+        </div>
+
+        <!-- New Exoplanet Section -->
+        <h2 style="margin-top: 3rem;">Beyond Our Solar System: Capturing the beauty of Exoplanets</h2>
+        <div class="exoplanets">
+            <!-- Audio for Exoplanet -->
+            <audio id="audio-exoplanet" src="Media/Mysterious music.mp3"></audio>
+            
+            <!-- Exoplanet Description -->
+            <p>
+                L1527, shown in this image from NASA’s James Webb Space Telescope’s MIRI (Mid-Infrared Instrument), is a molecular cloud that harbors a protostar. 
+                The swirling disk of material is forming new planets, with the early stages of planet formation captured here. 
+                Webb’s ability to observe at longer wavelengths has allowed us to glimpse the origins of planetary systems in unprecedented detail.
+            </p>
+            
+            <!-- Exoplanet Image -->
+            <img src="Media/Exoplanet.png" alt="L1527 Exoplanet Image" onclick="toggleAudio(document.getElementById('audio-exoplanet'));">
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Astronomy Enthusiasts. All rights reserved.</p>
+    </footer>
+</body>
+</html>

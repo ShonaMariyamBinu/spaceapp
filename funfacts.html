@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fun Star Facts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #1f1f2e; /* Dark space-like background */
+            font-family: 'Poppins', sans-serif;
+            color: #e0e0e0; /* Soft white text */
+        }
+
+        /* Fun Star Facts Heading */
+        h1 {
+            text-align: center;
+            font-size: 3.2em;
+            margin-top: 40px;
+            font-weight: 600;
+            color: #f39c12;
+            text-shadow: 2px 4px 6px rgba(0, 0, 0, 0.7);
+        }
+
+        /* Fun Facts Section */
+        .fun-facts {
+            margin: 40px auto;
+            max-width: 800px;
+            padding: 20px;
+            background-color: #2b2b38; /* Slightly lighter for contrast */
+            border-radius: 10px;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .fun-facts ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .fun-facts ul li {
+            font-size: 1.3em;
+            margin: 20px 0;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.8;
+            color: #e0e0e0;
+        }
+
+        .fun-facts ul li::before {
+            content: '★'; /* Star bullet symbol */
+            color: #f39c12;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.5em;
+        }
+
+        /* Star Images */
+        .fun-facts img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Link back to homepage */
+        .link-back {
+            display: block;
+            text-align: center;
+            margin-top: 40px;
+            color: #f39c12;
+            font-size: 1.2em;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .link-back:hover {
+            color: #f1c40f;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #888;
+            font-size: 0.9em;
+            background-color: #1f1f2e;
+            margin-top: 50px;
+        }
+
+        /* Apply aesthetic font to specific headings */
+        .animated-text h3 {
+            font-family: 'Playfair Display', serif; /* Use the selected aesthetic font */
+            font-size: 2rem; /* Adjust the size as needed */
+            color: #ff9000;
+            animation: bounceIn 1.5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Heading for Fun Facts -->
+    <h1>Fun Star Facts</h1>
+
+    <!-- Fun Facts in Bullet Points -->
+    <div class="fun-facts">
+        <ul>
+            <li>The composite image of Arp 107, captured by the James Webb Space Telescope, reveals intriguing details about the collision of two galaxies and their star formation.🌌✨</li>
+            <li>The near-infrared data highlights older stars and a bridge of gas connecting the galaxies.🌠🔗</li>
+            <li>The mid-infrared data showcases vibrant young stars and star-forming regions.🌟🔥</li>
+            <li>Notably, the collision point features a gap in the spiral galaxy, symbolizing both a new wave of star formation and an endearing "smile" shape.😊🌌</li>
+        </ul>
+
+        <!-- First Image (GIF or Image) -->
+        <img src="Media/starpi.jpg" alt="Star Formation GIF">
+
+        <ul>
+            <li>The image, captured by Webb’s MIRI, reveals the supermassive black hole in the center of the large spiral galaxy on the right.🌌🕳️</li>
+            <li>The black hole pulls dust into lanes and shows Webb’s characteristic diffraction spikes from light interacting with the telescope.✨</li>
+            <li>A key feature highlighted by MIRI is the millions of young stars forming, displayed in blue.🌟🔵</li>
+            <li>The small elliptical galaxy on the left has completed much of its star formation and contains many organic molecules.🌌🔬</li>
+        </ul>
+
+        <!-- Second Image -->
+        <img src="Media/star11.png" alt="Star Image">
+
+    </div>
+
+    <!-- Link back to Home Page -->
+    <a href="home.html" class="link-back">Back to Home</a>
+
+    <footer>
+        © 2024 Star Formation Studies. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
